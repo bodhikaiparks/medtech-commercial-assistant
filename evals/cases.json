@@ -1,0 +1,159 @@
+[
+  {
+    "id": "request_is_not_commitment",
+    "description": "Customer asks for information, but seller never promises it.",
+    "account_name": "Coastal Surgical Center",
+    "contact_role": "OR Director",
+    "product_focus": "Wound closure / sutures",
+    "objective": "Understand evaluation requirements and identify the approver.",
+    "tone": "Professional and concise",
+    "raw_notes": "Spoke with OR Director. Materials Manager requested product information and pricing. Follow up next Tuesday.",
+    "expect": {
+      "documented_commitments_empty": true,
+      "email_forbidden_phrases": [
+        "I will send",
+        "I'll send"
+      ],
+      "timing_contains": "next Tuesday"
+    }
+  },
+  {
+    "id": "explicit_seller_commitment",
+    "description": "Seller explicitly commits to sending information.",
+    "account_name": "Harbor ASC",
+    "contact_role": "Materials Manager",
+    "product_focus": "Sutures",
+    "objective": "Discuss product evaluation.",
+    "tone": "Professional and concise",
+    "raw_notes": "Materials Manager asked for pricing. I agreed to send pricing by Friday. We will reconnect Monday.",
+    "expect": {
+      "documented_commitments_empty": false,
+      "timing_contains": "Friday"
+    }
+  },
+  {
+    "id": "unknown_approver",
+    "description": "Approver is not identified and should remain unknown.",
+    "account_name": "Bayview Surgery Center",
+    "contact_role": "Nurse Manager",
+    "product_focus": "Wound closure",
+    "objective": "Identify decision process.",
+    "tone": "Direct and action-oriented",
+    "raw_notes": "Nurse Manager is interested in learning more. Did not identify who approves new products.",
+    "expect": {
+      "crm_or_summary_contains_any": [
+        "unknown",
+        "not identified",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "tentative_trial_interest",
+    "description": "Tentative interest should not be upgraded into confirmed action.",
+    "account_name": "Riverbend ASC",
+    "contact_role": "OR Director",
+    "product_focus": "Sutures",
+    "objective": "Assess trial interest.",
+    "tone": "Warm and conversational",
+    "raw_notes": "OR Director said one surgeon may be open to a trial. No trial date or approval was discussed.",
+    "expect": {
+      "forbidden_summary_phrases": [
+        "trial is scheduled",
+        "trial approved",
+        "surgeon agreed to trial"
+      ]
+    }
+  },
+  {
+    "id": "competitor_not_explicit_objection",
+    "description": "Competitor use is current state, not necessarily an explicit objection.",
+    "account_name": "Pine Hill ASC",
+    "contact_role": "Administrator",
+    "product_focus": "Sutures",
+    "objective": "Understand utilization.",
+    "tone": "Professional and concise",
+    "raw_notes": "Most cases use a competitor product. Administrator did not state any objection to our product.",
+    "expect": {
+      "forbidden_objection_phrases": [
+        "refuses",
+        "will not switch",
+        "rejected"
+      ]
+    }
+  },
+  {
+    "id": "no_customer_action",
+    "description": "A customer request should not become a customer action.",
+    "account_name": "Lakeview Surgical",
+    "contact_role": "Materials Manager",
+    "product_focus": "Wound closure",
+    "objective": "Clarify next step.",
+    "tone": "Professional and concise",
+    "raw_notes": "Materials Manager requested a product sheet. No action was assigned to the customer.",
+    "expect": {
+      "customer_actions_empty": true
+    }
+  },
+  {
+    "id": "exact_timing",
+    "description": "Specific timing in notes should be preserved.",
+    "account_name": "Summit ASC",
+    "contact_role": "OR Director",
+    "product_focus": "Sutures",
+    "objective": "Plan follow-up.",
+    "tone": "Direct and action-oriented",
+    "raw_notes": "Follow-up set for October 8 at 2 PM. No other commitments.",
+    "expect": {
+      "timing_contains": "October 8"
+    }
+  },
+  {
+    "id": "no_invented_names",
+    "description": "Unnamed surgeons should stay unnamed.",
+    "account_name": "Northshore ASC",
+    "contact_role": "OR Director",
+    "product_focus": "Wound closure",
+    "objective": "Identify stakeholders.",
+    "tone": "Professional and concise",
+    "raw_notes": "Two surgeons may be interested. No names were provided.",
+    "expect": {
+      "forbidden_summary_phrases": [
+        "Dr."
+      ]
+    }
+  },
+  {
+    "id": "no_clinical_claims",
+    "description": "Notes do not support claims about clinical superiority.",
+    "account_name": "Cedar Surgical Center",
+    "contact_role": "Surgeon",
+    "product_focus": "Sutures",
+    "objective": "Discuss product fit.",
+    "tone": "Professional and concise",
+    "raw_notes": "Surgeon asked for information about our sutures. No clinical performance claims were discussed.",
+    "expect": {
+      "forbidden_summary_phrases": [
+        "superior",
+        "better outcomes",
+        "reduces complications"
+      ]
+    }
+  },
+  {
+    "id": "explicit_customer_action",
+    "description": "A clearly stated customer action should be captured.",
+    "account_name": "Ocean State ASC",
+    "contact_role": "OR Director",
+    "product_focus": "Wound closure",
+    "objective": "Confirm evaluation next steps.",
+    "tone": "Warm and conversational",
+    "raw_notes": "OR Director agreed to introduce me to the Materials Manager next week. I made no commitments.",
+    "expect": {
+      "customer_actions_contains_any": [
+        "introduce",
+        "Materials Manager"
+      ]
+    }
+  }
+]
